@@ -1,0 +1,66 @@
+[ec2-user@ip-10-1-10-227 ~]$ ./conn
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 56
+Server version: 8.0.28 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]>
+
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dt_test            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+MySQL [(none)]> use dt_test;
+Database changed
+MySQL [dt_test]>
+MySQL [dt_test]>
+MySQL [dt_test]> create table persons (name varchar(100));
+Query OK, 0 rows affected (0.06 sec)
+
+MySQL [dt_test]>
+MySQL [dt_test]>
+MySQL [dt_test]> show tables;
++-------------------+
+| Tables_in_dt_test |
++-------------------+
+| persons           |
++-------------------+
+1 row in set (0.01 sec)
+
+MySQL [dt_test]> insert into persons('dinesh');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''dinesh')' at line 1
+MySQL [dt_test]> insert into persons values('dinesh');
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [dt_test]> insert into persons values('tene');
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [dt_test]> insert into persons values('sandeep');
+Query OK, 1 row affected (0.06 sec)
+
+MySQL [dt_test]> insert into persons values('venky');
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [dt_test]> select * from persons;~
++---------+
+| name    |
++---------+
+| dinesh  |
+| tene    |
+| sandeep |
+| venky   |
++---------+
+4 rows in set (0.00 sec)

@@ -1,0 +1,5 @@
+min RTO for a single AZ outage will be 0, as the database is multi-az
+min RTO for a single reagion outage will be under 10mins or less, as all we need to do is convert the read replica to an active database
+
+min RPO for a single AZ outage will be 0, as the database is multi-az
+min RPO for a single region outage will be under 10mins or less, as all we need to do is convert the read replica to an active database
